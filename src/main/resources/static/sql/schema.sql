@@ -59,11 +59,11 @@ CREATE TABLE `declare_information_img`
     gmt_modified datetime        NOT NULL comment '修改时间',
     is_deleted   int             NOT NULL comment '删除标记(0: 正常, 1: 删除)',
     user_id      bigint          NOT NULL comment '用户ID',
-    declare_id   int             NOT NULL comment '状态',
+    declare_id   bigint             NOT NULL comment '状态',
     type         varchar(32)     NOT NULL comment '资料类型',
     path         varchar(128)    NOT NULL comment '资料地址'
 ) ENGINE = InnoDB
-  DEFAULT COLLATE = utf8mb4_0900_ai_ci COMMENT = '申报表';
+  DEFAULT COLLATE = utf8mb4_0900_ai_ci COMMENT = '申报资料表';
 
 -- 申报费用项目表
 DROP TABLE IF EXISTS `declare_expense_item`;
@@ -74,7 +74,7 @@ CREATE TABLE `declare_expense_item`
     gmt_modified             datetime        NOT NULL comment '修改时间',
     is_deleted               int             NOT NULL comment '删除标记(0: 正常, 1: 删除)',
     user_id                  bigint          NOT NULL comment '用户ID',
-    declare_id               int             NOT NULL comment '状态',
+    declare_id               bigint             NOT NULL comment '状态',
     deposit                  VARCHAR(32)     NOT NULL COMMENT '押金',
     management_fee           VARCHAR(32)     NOT NULL COMMENT '管理费',
     electric_fee             VARCHAR(64)     NOT NULL COMMENT '电费',
@@ -87,4 +87,4 @@ CREATE TABLE `declare_expense_item`
     network_fee              VARCHAR(64)     NULL COMMENT '网络通讯安装费',
     network_fee_detail       TEXT            NULL COMMENT '网络通讯安装费明细'
 ) ENGINE = InnoDB
-  DEFAULT COLLATE = utf8mb4_0900_ai_ci COMMENT = '申报表';
+  DEFAULT COLLATE = utf8mb4_0900_ai_ci COMMENT = '申报费用项目表';
